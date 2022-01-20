@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payflow/shared/themes/app_colors.dart';
 
 class DividerVertical extends StatelessWidget {
   const DividerVertical({Key? key}) : super(key: key);
@@ -8,7 +9,7 @@ class DividerVertical extends StatelessWidget {
     return Container(
       height: double.maxFinite,
       width: 0.5,
-      decoration: const BoxDecoration(color: Colors.black),
+      color: AppColors.stroke,
     );
   }
 }

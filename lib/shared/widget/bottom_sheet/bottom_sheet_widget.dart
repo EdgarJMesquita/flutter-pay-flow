@@ -23,31 +23,50 @@ class BottomSheetWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        color: AppColors.shape,
-        child: Column(
-          children: [
-            Expanded(
-                child: Container(
-              color: Colors.black.withOpacity(0.6),
-            )),
-            Column(
+    return SafeArea(
+      child: RotatedBox(
+        quarterTurns: 1,
+        child: Material(
+          child: Container(
+            color: AppColors.shape,
+            child: Column(
               children: [
-                Text.rich(
-                  TextSpan(
-                      text: title, children: [TextSpan(text: "\n$subtitle")]),
-                  textAlign: TextAlign.center,
-                ),
-                SetLabelButtons(
-                  primaryLabel: primaryLabel,
-                  primaryPressed: primaryPressed,
-                  secondaryLabel: secondaryLabel,
-                  secondaryPressed: secondaryPressed,
+                Expanded(
+                    child: Container(
+                  color: Colors.black.withOpacity(0.6),
+                )),
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(40),
+                      child: Text.rich(
+                        TextSpan(
+                            style: TextStyles.buttonBoldHeading,
+                            text: title,
+                            children: [
+                              TextSpan(
+                                  text: "\n$subtitle",
+                                  style: TextStyles.buttonHeading)
+                            ]),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Container(
+                      color: AppColors.stroke,
+                      height: 1,
+                    ),
+                    SetLabelButtons(
+                      primaryLabel: primaryLabel,
+                      primaryPressed: primaryPressed,
+                      secondaryLabel: secondaryLabel,
+                      secondaryPressed: secondaryPressed,
+                      enablePrimaryColor: true,
+                    )
+                  ],
                 )
               ],
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
