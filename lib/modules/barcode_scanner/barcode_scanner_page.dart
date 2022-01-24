@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
-import 'package:payflow/shared/widget/bottom_sheet/bottom_sheet_widget.dart';
-import 'package:payflow/shared/widget/divider_vertical/divider_vertical.dart';
-import 'package:payflow/shared/widget/label_button/label_button.dart';
 import 'package:payflow/shared/widget/set_label_buttons/set_label_buttons.dart';
 
 class BarcodeScannerPage extends StatefulWidget {
-  BarcodeScannerPage({Key? key}) : super(key: key);
+  const BarcodeScannerPage({Key? key}) : super(key: key);
 
   @override
   _BarcodeScannerPageState createState() => _BarcodeScannerPageState();
@@ -16,6 +13,13 @@ class BarcodeScannerPage extends StatefulWidget {
 class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
   @override
   Widget build(BuildContext context) {
+    /*  return BottomSheetWidget(
+        primaryLabel: "teste2",
+        secondaryLabel: "teste",
+        primaryPressed: () {},
+        secondaryPressed: () {},
+        title: 'title',
+        subtitle: 'subtitle'); */
     return SafeArea(
       bottom: true,
       left: true,
